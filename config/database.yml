@@ -20,7 +20,10 @@ default: &default
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-
+  host: localhost
+  username: "clinic_management_admin"
+  password: "12325897AQz"
+  
 development:
   <<: *default
   database: clinic_management_development
