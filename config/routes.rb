@@ -10,4 +10,6 @@ Rails.application.routes.draw do
 
   root 'home#index'
   resources :patients
+  resources :appointments, only: %i[create edit update]
+  resources :doctors
 end

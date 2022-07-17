@@ -1,0 +1,12 @@
+<h1>Doctor</h1>
+
+<div>
+	<h2></h2>
+	<% @active_patients.each do |appointment| %>
+		<%= appointment.patient.name %>,
+		<%= appointment.patient.phone_number %>
+		<%= button_to 'make an recommendation',
+			edit_appointment_path(appointment), method: :get
+		%>
+	<% end %>
+</div>

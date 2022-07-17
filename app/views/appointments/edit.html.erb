@@ -1,0 +1,12 @@
+<h1><%= current_user.name %></h1>
+<p>give a recommendation to the patient <%= @appointment.patient.name %> </p>
+
+<div>
+	<%= form_with model: @appointment do |f| %>
+
+	  <%= f.label :recommendation %>:
+	  <%= f.text_field :recommendation %>
+
+	  <%= f.submit "make a recommendation" %>
+	<% end %>
+</div>

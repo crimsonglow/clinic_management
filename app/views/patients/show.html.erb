@@ -1,0 +1,24 @@
+<h1>Patient</h1>
+
+<div>
+	<h2>your recommendations</h2>
+	<% @inactive_appointment.each do |appointment| %>
+		<%= appointment.doctor.name %>,
+		<%= appointment.doctor.category.name %>,
+		<%= appointment.recommendation %>,
+		<%= appointment.status %>.
+		<br />
+	<% end %>
+</div>
+
+<div>
+	<h2>Make an appointment with a doctor</h2>
+	<% @categories.each do |category| %>
+		<% category.doctors.each do |doctor| %>
+			<%= category.name %>,
+			<%= doctor.name %>,
+			<%= doctor.phone_number %>
+			<%= button_to 'make an appointment',appointments_path(doctor_id: doctor.id) %>
+		<% end %>
+	<% end %>
+</div>
