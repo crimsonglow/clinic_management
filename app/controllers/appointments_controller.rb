@@ -3,7 +3,7 @@ class AppointmentsController < ApplicationController
   before_action :require_create, only: [:create]
 
   def edit
-
+    authorize! :edit, Appointment
   end
 
   def create
@@ -18,6 +18,7 @@ class AppointmentsController < ApplicationController
     else
       redirect_to patient_path
     end
+    authorize! :create, Appointment
   end
 
   def update
@@ -26,6 +27,7 @@ class AppointmentsController < ApplicationController
     else
       render 'edit'
     end
+    authorize! :update, Appointment
   end
 
 private

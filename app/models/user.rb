@@ -13,4 +13,12 @@ class User < ApplicationRecord
   def will_save_change_to_email?
     false
   end
+
+  def patient?
+    type == 'Patient'
+  end
+
+  def doctor?
+    type == 'Doctor'
+  end
 end

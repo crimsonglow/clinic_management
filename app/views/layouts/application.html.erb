@@ -9,6 +9,7 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
 
+    <%= link_to 'Home', root_path %>
 
     <% if user_signed_in? %>
       Hello: <%= current_user.phone_number %>
@@ -17,7 +18,6 @@
     <% else %>
       <%= link_to "Sign in", new_user_session_path %>
       <%= link_to "Sign up", new_user_registration_path %>
-
     <% end %>
   </head>
 

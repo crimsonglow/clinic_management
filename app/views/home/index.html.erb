@@ -1,1 +1,9 @@
 <h1>Welcome to the health center</h1>
+
+<div>
+  <% if current_user.patient? %>
+    <%= link_to "personal profile", patient_path(current_user.id) %>
+  <% elsif current_user.doctor? %>
+    <%= link_to "personal profile", doctor_path(current_user.id) %>
+   <% end %>
+</div>
