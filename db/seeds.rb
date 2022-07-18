@@ -1,3 +1,5 @@
+AdminUser.create!(phone_number: '+380665566556', password: 'password', password_confirmation: 'password')
+
 3.times { Category.create(name: FFaker::HealthcareRU.doctor_specialization) }
 
 5.times do
