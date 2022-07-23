@@ -3,5 +3,5 @@ class Doctor < User
   has_many :appointments
   has_many :patients, through: :appointments
 
-  validates :phone_number, uniqueness: true
+  validates_uniqueness_of :phone_number, case_sensitive: false
 end

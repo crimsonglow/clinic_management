@@ -50,9 +50,9 @@ gem "sassc-rails"
 
 group :development, :test do
   gem 'rspec-rails'
-  gem 'factory_bot'
+  gem 'factory_bot_rails'
   gem 'ffaker'
-  gem 'rails-controller-testing'
+  gem 'shoulda-matchers'
 
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
@@ -85,3 +85,6 @@ gem 'cancancan'
 
 # Active Admin is a Ruby on Rails plugin for generating administration style interfaces.
 gem 'activeadmin'
+
+# Net::HTTP provides a rich library which can be used to build HTTP user-agents
+gem "net-http"
