@@ -9,19 +9,33 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
 
-    <%= link_to 'Home', root_path %>
+    <div class="container">
+      <div class="card sadow">
+        <div class="row">
+          <div class="col" >
+            <%= link_to 'Home', root_path, class: " border bg-light" %>
+          </div>
 
-    <% if user_signed_in? %>
-      Hello: <%= current_user.phone_number %>
-      <%= link_to "Exit", destroy_user_session_path, method: 'delete' %>
-
-    <% else %>
-      <%= link_to "Sign in", new_user_session_path %>
-      <%= link_to "Sign up", new_user_registration_path %>
-    <% end %>
+          <div class="col-3">
+            <% if user_signed_in? %>
+              Hello: <%= current_user.phone_number %>
+              <%= link_to "Exit", destroy_user_session_path, method: 'delete',
+                class: "border bg-light" %>
+            <% else %>
+              <%= link_to "Sign in", new_user_session_path,
+                class: "border bg-light" %>
+              <%= link_to "Sign up", new_user_registration_path,
+                class: "border bg-light" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container">
+        <%= yield %>
+    </div>
   </body>
 </html>

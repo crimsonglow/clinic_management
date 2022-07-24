@@ -1,12 +1,12 @@
-<h1><%= current_user.name %></h1>
-<p>give a recommendation to the patient <%= @appointment.patient.name %> </p>
+<div class="card sadow">
+	<h1><%= @appointment.patient.name %></h1>
+	<p>give a recommendation to the patient</p>
 
-<div>
 	<%= form_with model: @appointment do |f| %>
 
 	  <%= f.label :recommendation %>:
 	  <%= f.text_field :recommendation %>
 
-	  <%= f.submit "save this recommendation" %>
+	  <%= f.submit "save this recommendation", class: "btn btn-primary" %>
 	<% end %>
 </div>

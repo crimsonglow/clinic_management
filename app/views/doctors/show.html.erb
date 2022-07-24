@@ -1,24 +1,25 @@
-<h1>Doctor</h1>
-
-<div>
+<div class="card sadow">
 	<% if current_user.avatar.key == nil  %>
 		<%= form_for current_user do |f| %>
 	    <%= f.file_field :avatar %>
 	    <%= f.submit "Save photo" %>
 		<% end %>
 	<% else %>
-		<h3>Photo</h3>
+		<h4>Photo</h4>
     <%= image_tag current_user.avatar, width: "200px" %>
 	<% end %>
 </div>
-
-<div>
-	<h2></h2>
-	<% @active_patients.each do |appointment| %>
-		<%= appointment.patient.name %>,
-		<%= appointment.patient.phone_number %>
-		<%= button_to 'make an recommendation',
-			edit_appointment_path(appointment), method: :get
-		%>
-	<% end %>
+<div class="card sadow">
+	<h4>Patients:</h4>
+	<div class="row">
+		<% @active_patients.each do |appointment| %>
+			<div class="col-4 ">
+				<%= appointment.patient.name %><br />
+				<%= appointment.patient.phone_number %>
+				<%= button_to 'make an recommendation',
+					edit_appointment_path(appointment), method: :get,
+				  class: "btn btn-primary" %><br />
+			</div>
+		<% end %>
+	</div>
 </div>
