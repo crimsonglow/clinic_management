@@ -8,6 +8,7 @@ class Registration::PatientController < Devise::RegistrationsController
 protected
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:type])
+    devise_parameter_sanitizer.
+      permit(:sign_up, keys: [:type, :name, :phone_number])
   end
 end
