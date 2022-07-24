@@ -1,6 +1,18 @@
 <h1>Doctor</h1>
 
 <div>
+	<% if current_user.avatar.key == nil  %>
+		<%= form_for current_user do |f| %>
+	    <%= f.file_field :avatar %>
+	    <%= f.submit "Save photo" %>
+		<% end %>
+	<% else %>
+		<h3>Photo</h3>
+    <%= image_tag current_user.avatar, width: "200px" %>
+	<% end %>
+</div>
+
+<div>
 	<h2></h2>
 	<% @active_patients.each do |appointment| %>
 		<%= appointment.patient.name %>,
